@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
-import { Flex, Image } from 'rebass';
+import { Flex } from 'rebass';
 import styled from 'styled-components';
 import { SectionLinks } from 'react-scroll-section';
 import Fade from 'react-reveal/Fade';
 import RouteLink from './RouteLink';
-import Logo from './Logo/Portfolio-text-montez.svg';
+import ImageLogo from './ImageName'
 
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
@@ -25,47 +25,29 @@ const formatLinks = allLinks =>
       return isHome
         ? {
             ...acc,
-            home: value,
+            home: value
           }
         : {
             ...acc,
-            links: [...acc.links, { name: capitalize(key), value }],
+            links: [...acc.links, { name: capitalize(key), value }]
           };
     },
-    { links: [], home: null },
+    { links: [], home: null }
   );
 
 const Header = () => (
   <HeaderContainer>
     <Fade top>
-      <Flex
-        flexWrap="wrap"
-        justifyContent="space-between"
-        alignItems="center"
-        p={3}
-      >
+      <Flex flexWrap="wrap" justifyContent="space-between" alignItems="center" p={3}>
         <SectionLinks>
           {({ allLinks }) => {
             const { home, links } = formatLinks(allLinks);
 
             const homeLink = home && (
-              <Image
-                src={Logo}
-                width="200px"
-                alt="Portfolio Logo"
-                onClick={home.onClick}
-                style={{
-                  cursor: 'pointer',
-                }}
-              />
+            <ImageLogo onClick={home.onClick} />
             );
             const navLinks = links.map(({ name, value }) => (
-              <RouteLink
-                key={name}
-                onClick={value.onClick}
-                selected={value.selected}
-                name={name}
-              />
+              <RouteLink key={name} onClick={value.onClick} selected={value.selected} name={name} />
             ));
 
             return (
