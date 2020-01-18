@@ -1,12 +1,14 @@
 module.exports = {
   background: '#FFFFFF',
-  backgroundDark: '#f0e6f6',
+  backgroundDark: '#F4F0FA',
 
-  primary: '#7c37ad',
-  primaryLight: '#ae66df',
-  primaryDark: '#4b007d',
+  secondary: '#5AB9EA',
+  secondaryLight: '#84CEEB',
+  secondaryDark: '#5680E9',
 
-  secondary: '#ff4081',
-  secondaryLight: '#ff79b0',
-  secondaryDark: '#c60055',
+  primary: '#8860D0',
+  primaryLight: '#A88BDC',
+  primaryDark: '#634698',
 };
+
+// https://coolors.co/f4f0fa-e8ebf5-5680e9-5ab9ea-f3fafd
