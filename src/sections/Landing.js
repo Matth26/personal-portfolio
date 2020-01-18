@@ -48,6 +48,7 @@ const LandingPage = () => (
         query SiteTitleQuery {
           contentfulAbout {
             name
+            pseudo
             roles
             socialLinks {
               id
@@ -64,7 +65,7 @@ const LandingPage = () => (
         }
       `}
       render={({ contentfulAbout, site }) => {
-        const { name, socialLinks, roles } = contentfulAbout;
+        const { pseudo, socialLinks, roles } = contentfulAbout;
         const { deterministicBehaviour } = site.siteMetadata;
 
         return (
@@ -76,7 +77,7 @@ const LandingPage = () => (
               fontSize={[5, 6, 8]}
               mb={[3, 4, 5]}
             >
-              {`Hello, I'm ${name}!`}
+              {`Hello, I'm ${pseudo}!`}
             </Heading>
 
             <Heading
