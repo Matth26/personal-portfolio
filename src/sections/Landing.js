@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Heading, Flex, Box, Text } from 'rebass';
+import { Heading, Flex, Box } from 'rebass';
+import Space from '@rebass/space'
+import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
 import { SectionLink } from 'react-scroll-section';
+import Typist from 'react-typist';
 import Section from '../components/Section';
 import SocialLink from '../components/SocialLink';
 import MouseIcon from '../components/MouseIcon';
@@ -38,6 +41,13 @@ const Background = () => (
     />
   </div>
 );
+
+const StyledTypist = styled(Typist)`
+
+  .Cursor{
+    display: none;
+  }
+`;
 
 const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
 
@@ -77,7 +87,7 @@ const LandingPage = () => (
               fontSize={[5, 6, 8]}
               mb={[3, 4, 5]}
             >
-              {`Hello, I'm ${pseudo}!`}
+              {`Hi, I'm ${pseudo} 😊`}
             </Heading>
 
             <Heading
@@ -88,24 +98,43 @@ const LandingPage = () => (
               textAlign="center"
               style={centerHorizontally}
             >
-              <TextLoop interval={5000}>
-                {roles
-                  .sort(() => deterministicBehaviour || Math.random() - 0.5)
-                  .map(text => (
-                    <Text width={[300, 500]} key={text}>
-                      {text}
-                    </Text>
-                  ))}
-              </TextLoop>
+              <Typist
+                avgTypingDelay={40}
+                cursor={{
+                    show: false,
+                  }}
+              >
+                  I'm a Geek...
+                <Typist.Backspace count={7} delay={1000} />
+                <Typist.Delay ms={100} />
+                  Crypto Enthusiast 🚀
+                <Typist.Backspace count={25} delay={1500} />
+                <span> </span>
+                Make Poor Life Decisions
+                <Typist.Backspace count={19} delay={10} />
+                  Website !
+                <Typist.Backspace count={14} delay={1000} />
+                Love Programming
+                <Typist.Delay ms={100} />
+                <span> !</span>
+                <Typist.Backspace count={1} delay={1000} />
+                and Travelling !
+              </Typist>
             </Heading>
 
-            <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-              {socialLinks.map(({ id, ...rest }) => (
-                <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-                  <SocialLink {...rest} />
-                </Box>
+            <Space mt={[ 5, 6 ]}>
+              <Flex
+                alignItems="center"
+                justifyContent="center"
+                flexWrap="wrap"
+              >
+                {socialLinks.map(({ id, ...rest }) => (
+                  <Box mx={3} fontSize={[5, 6, 6]} key={id}>
+                    <SocialLink {...rest} />
+                  </Box>
               ))}
-            </Flex>
+              </Flex>
+            </Space>
             <SectionLink section="about">
               {({ onClick }) => <MouseIcon onClick={onClick} />}
             </SectionLink>
@@ -115,5 +144,24 @@ const LandingPage = () => (
     />
   </Section.Container>
 );
+
+/*
+              <TextLoop interval={5000}>
+                {roles
+                  .sort(() => deterministicBehaviour || Math.random() - 0.5)
+                  .map(text => (
+                    <Text width={[300, 500]} key={text}>
+                      {text}
+                    </Text>
+                  ))}
+              </TextLoop> */
+
+              /*
+                            <Typist>
+                <StyledTypist>
+                  {roles[0]}
+                </StyledTypist>
+              </Typist>
+*/
 
 export default LandingPage;
