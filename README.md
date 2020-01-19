@@ -4,7 +4,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Ema-suriano/gatsby-starter-mate)
 
-![M Logo](./media/logo.png)
+![M Logo](./media/icon.png)
 
 This portfolio is build on Gatsby using Contentful CMS. Based on the [Mate Portoflio Starter](https://github.com/EmaSuriano/gatsby-starter-mate). Thanks [Ema Suriano](https://github.com/EmaSuriano) for this incredible work :)
 In case you are looking for a quick setup portfolio or upgrade your current, you have to definitely try Mate!
