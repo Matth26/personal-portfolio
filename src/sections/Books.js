@@ -163,7 +163,7 @@ Book.propTypes = {
 
 const Books = () => (
   <Section.Container id="Books" Background={Background}>
-    <Section.Header name="Books" icon="book" label="notebook" />
+    <Section.Header name="Books" icon="📚" label="notebook" />
     <StaticQuery
       query={graphql`
         query BooksQuery {
